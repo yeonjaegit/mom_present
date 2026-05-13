@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="아로하 노블 결혼정보 분당본점 노은옥 수석이사 — 성남·분당 전문 맞춤 상담" />
-  <title>노은옥 수석이사 | 아로하 노블 결혼정보 분당본점</title>
+  <title>노은옥 수석이사 온라인 명함<br>아로하 노블 결혼정보회사</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,6 +26,7 @@
       --radius: 18px;
       --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       --font-serif: "Nanum Myeongjo", Georgia, serif;
+      --nav-offset: 88px;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -33,8 +34,8 @@
     body {
       margin: 0;
       font-family: var(--font-sans);
-      font-size: 1.125rem;
-      line-height: 1.65;
+      font-size: clamp(1.02rem, 2.8vw, 1.125rem);
+      line-height: 1.62;
       color: var(--text);
       background: var(--cream);
       -webkit-font-smoothing: antialiased;
@@ -64,14 +65,21 @@
       border-radius: 8px;
     }
 
-    /* Header */
+    /* Header: 맨 위 = 불투명 흰색, 스크롤 시 = 반투명 유리 + 현재 섹션 네비 강조(.is-active) */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
+      background: #ffffff;
       border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+      transition: background-color 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .site-header.is-scrolled {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom-color: rgba(197, 160, 89, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 31, 63, 0.06);
     }
     .header-inner {
       max-width: 1120px;
@@ -97,6 +105,10 @@
       font-size: 0.8rem;
       color: var(--navy);
       font-weight: 600;
+      line-height: 1.35;
+    }
+    .brand-sep {
+      white-space: pre;
     }
     .nav-links {
       display: flex;
@@ -112,14 +124,123 @@
       padding: 6px 4px;
       border-bottom: 2px solid transparent;
     }
-    .nav-links a:hover {
+    .nav-links a.is-active {
       border-bottom-color: var(--gold);
       color: var(--navy-mid);
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .nav-links a:hover {
+        border-bottom-color: var(--gold);
+        color: var(--navy-mid);
+      }
+    }
+    .nav-links a:focus {
+      outline: none;
+    }
+    .nav-links a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+    @media (max-width: 768px) {
+      .header-inner {
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 12px 14px;
+        gap: 10px 12px;
+      }
+      .brand {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+      .brand-ko {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
+      .brand-sep {
+        display: none;
+      }
+      .nav-links {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: minmax(2.25rem, auto);
+        gap: 6px 6px;
+        width: min(13.5rem, 58vw);
+        flex: 0 0 auto;
+        align-self: start;
+        justify-items: stretch;
+        align-items: stretch;
+      }
+      .nav-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: clamp(0.68rem, 2.6vw, 0.76rem);
+        font-weight: 600;
+        line-height: 1.2;
+        padding: 7px 4px;
+        white-space: nowrap;
+        border-bottom: none;
+        border-radius: 8px;
+        background: rgba(0, 31, 63, 0.06);
+        min-width: 0;
+        -webkit-tap-highlight-color: transparent;
+      }
+      @media (hover: hover) and (pointer: fine) {
+        .nav-links a:hover {
+          background: rgba(197, 160, 89, 0.22);
+          color: var(--navy);
+        }
+        .nav-links a.is-active:hover {
+          background: rgba(197, 160, 89, 0.36);
+          color: var(--navy);
+        }
+      }
+      .nav-links a.is-active {
+        background: rgba(197, 160, 89, 0.32);
+        color: var(--navy);
+        font-weight: 700;
+        box-shadow: inset 0 0 0 1px rgba(197, 160, 89, 0.45);
+      }
+      .nav-links a:focus {
+        background: rgba(0, 31, 63, 0.06);
+        outline: none;
+      }
+      .nav-links a:focus.is-active {
+        background: rgba(197, 160, 89, 0.32);
+        box-shadow: inset 0 0 0 1px rgba(197, 160, 89, 0.45);
+      }
+    }
+    @media (max-width: 400px) {
+      .nav-links {
+        width: min(12rem, 60vw);
+        gap: 5px 4px;
+      }
+      .nav-links a {
+        font-size: clamp(0.62rem, 3.2vw, 0.7rem);
+        padding: 6px 2px;
+      }
+    }
+
+    /* 앵커 스크롤: 헤더 높이와 스파이 기준선 동일 (--nav-offset, JS에서 갱신) */
+    #card,
+    #intro,
+    #company,
+    #cta,
+    #location {
+      scroll-margin-top: var(--nav-offset);
     }
 
     /* Sections */
     .section {
       padding: clamp(56px, 8vw, 96px) 20px;
+    }
+    @media (max-width: 768px) {
+      .section {
+        padding: 28px 16px 28px;
+      }
     }
     .section-inner {
       max-width: 1120px;
@@ -134,7 +255,7 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 12px;
+      margin: 0 0 8px;
     }
     .section-title {
       font-family: var(--font-serif);
@@ -144,14 +265,25 @@
       margin: 0 0 20px;
       line-height: 1.3;
     }
+    @media (max-width: 768px) {
+      .section-title {
+        margin-bottom: 14px;
+        font-size: clamp(1.45rem, 5vw, 2rem);
+      }
+    }
 
     /* Hero */
     .hero {
       background: linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 45%, #123a5c 100%);
       color: var(--white);
-      padding: clamp(48px, 10vw, 100px) 20px 72px;
+      padding: clamp(48px, 10vw, 100px) 20px clamp(48px, 8vw, 72px);
       position: relative;
       overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        padding: clamp(40px, 9vw, 72px) 16px 40px;
+      }
     }
     .hero::after {
       content: "";
@@ -223,7 +355,7 @@
     /* Digital business card */
     .card-section { background: var(--white); }
     .digital-card {
-      max-width: 720px;
+      max-width: min(720px, 100%);
       margin: 0 auto;
       background: var(--white);
       border-radius: 22px;
@@ -280,6 +412,11 @@
     .digital-card-body {
       padding: 28px;
     }
+    @media (max-width: 560px) {
+      .digital-card-body {
+        padding: 20px 16px;
+      }
+    }
     .role-block {
       text-align: center;
       padding-bottom: 22px;
@@ -307,7 +444,9 @@
       display: flex;
       gap: 14px;
       align-items: flex-start;
-      font-size: 1.05rem;
+      font-size: clamp(0.98rem, 2.2vw, 1.05rem);
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
     .contact-row i {
       color: var(--gold);
@@ -341,10 +480,20 @@
       margin: 0 auto;
       border-radius: 12px;
       box-shadow: 0 12px 32px rgba(0, 31, 63, 0.12);
-      max-height: 220px;
       width: auto;
+      height: auto;
+      max-width: min(100%, 920px);
+      max-height: min(65vh, 480px);
+      max-height: min(65dvh, 480px);
       object-fit: contain;
+      object-position: center;
       background: #f0ebe3;
+    }
+    @media (max-width: 425px) {
+      .card-photo-ref img {
+        max-height: min(52vh, 360px);
+        max-height: min(52dvh, 360px);
+      }
     }
 
     /* Intro & company */
@@ -356,16 +505,20 @@
       border-radius: 0 var(--radius) var(--radius) 0;
       box-shadow: 0 8px 28px rgba(0, 31, 63, 0.06);
       font-family: var(--font-serif);
-      font-size: clamp(1.1rem, 2.2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2.2vw, 1.22rem);
       font-weight: 700;
       color: var(--navy);
-      line-height: 1.75;
+      line-height: 1.72;
       margin: 24px 0 0;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
     .prose {
-      font-size: 1.12rem;
+      font-size: clamp(1rem, 2.4vw, 1.12rem);
       color: var(--text);
       max-width: 68ch;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
     .prose p { margin: 0 0 1.1em; }
     .prose p:last-child { margin-bottom: 0; }
@@ -373,7 +526,7 @@
     .company-section { background: var(--white); }
     .pill-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
       gap: 18px;
       margin-top: 28px;
     }
@@ -412,16 +565,37 @@
     .cta-section .section-title { color: var(--white); }
     .cta-section .section-label { color: var(--gold-soft); }
     .cta-lead {
-      font-size: 1.15rem;
+      font-size: clamp(1rem, 2.8vw, 1.15rem);
       opacity: 0.92;
       max-width: 40ch;
       margin: 0 auto 28px;
+      line-height: 1.55;
+      padding: 0 4px;
     }
     .cta-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
       justify-content: center;
+      align-items: stretch;
+    }
+    @media (max-width: 425px) {
+      .cta-buttons {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+        max-width: 100%;
+        gap: 10px;
+        padding: 0 2px;
+      }
+      .cta-buttons .btn {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+      .cta-lead {
+        margin-bottom: 20px;
+      }
     }
     .btn {
       display: inline-flex;
@@ -430,7 +604,7 @@
       gap: 10px;
       padding: 16px 28px;
       border-radius: 999px;
-      font-size: 1.08rem;
+      font-size: clamp(0.98rem, 2.6vw, 1.08rem);
       font-weight: 700;
       text-decoration: none;
       border: none;
@@ -479,13 +653,15 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       border: 1px solid rgba(0, 31, 63, 0.12);
-      min-height: 320px;
+      min-height: min(320px, 52vh);
       background: #e2e8f0;
     }
     .map-frame iframe {
       width: 100%;
-      height: 360px;
+      height: min(360px, 52vh);
+      min-height: 240px;
       border: 0;
+      display: block;
     }
     .address-card {
       background: var(--white);
@@ -505,8 +681,10 @@
     .address-card h3 i { color: var(--gold); }
     .address-card p {
       margin: 0 0 14px;
-      font-size: 1.05rem;
+      font-size: clamp(0.98rem, 2.2vw, 1.05rem);
       color: var(--text);
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
     .address-card .sub {
       font-size: 0.95rem;
@@ -520,6 +698,17 @@
       padding: 28px 20px;
       text-align: center;
       font-size: 0.92rem;
+    }
+    .site-footer p {
+      margin: 0 0 8px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .site-footer p:last-child {
+      margin-bottom: 0;
+    }
+    .site-footer .footer-phrase {
+      white-space: nowrap;
     }
     .site-footer a { color: var(--gold-soft); }
 
@@ -571,15 +760,15 @@
     <div class="header-inner">
       <div class="brand">
         <span class="brand-en">AROHA</span>
-        <span class="brand-ko">아로하 노블 결혼정보 · 분당본점</span>
+        <span class="brand-ko"><span class="brand-line1">아로하 노블 결혼정보</span><span class="brand-sep" aria-hidden="true"> · </span><span class="brand-line2">분당본점</span></span>
       </div>
       <nav class="nav-links" aria-label="주요 메뉴">
         <a href="#hero">홈</a>
         <a href="#card">디지털 명함</a>
         <a href="#intro">소개</a>
         <a href="#company">회사</a>
-        <a href="#location">오시는 길</a>
         <a href="#cta">상담</a>
+        <a href="#location">오시는 길</a>
       </nav>
     </div>
   </header>
@@ -690,7 +879,8 @@
           </div>
         </div>
         <div class="card-photo-ref reveal reveal-delay-2">
-          <img src="img/business-card.png" alt="아로하 노블 결혼정보 노은옥 수석이사 명함" loading="lazy" width="640" height="200" onerror="this.style.display='none'; this.previousElementSibling.textContent='명함 이미지: 저장소의 img/business-card.png 파일을 넣어 주시면 여기에 표시됩니다.';" />
+          <img src="img/business-card.png" alt="아로하 노블 결혼정보 노은옥
+           수석이사 명함" loading="lazy" decoding="async" onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='image.png';} else { this.style.display='none'; }" />
         </div>
       </div>
     </section>
@@ -756,7 +946,7 @@
         <div class="cta-buttons reveal reveal-delay-2">
           <a class="btn btn-gold" href="tel:1566-6780"><i class="fa-solid fa-phone" aria-hidden="true"></i> 대표번호 연결</a>
           <a class="btn btn-outline" href="tel:010-7917-8798"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> 휴대전화 연결</a>
-          <a class="btn btn-kakao" id="kakaoCta" href="#" rel="noopener noreferrer"><i class="fa-regular fa-comment-dots" aria-hidden="true"></i> 톡 상담카카오</a>
+          <a class="btn btn-kakao" id="kakaoCta" href="#" rel="noopener noreferrer"><i class="fa-brands fa-kakao-talk" aria-hidden="true"></i> 톡 상담카카오</a>
         </div>
       </div>
     </section>
@@ -786,7 +976,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>© 아로하 노블 결혼정보 · 노은옥 수석이사 분당본점 랜딩 페이지</p>
+    <p>© 아로하 노블 결혼정보 · 노은옥 수석이사 분당본점 <span class="footer-phrase">랜딩 페이지</span></p>
     <p><a href="https://www.aroha.co.kr" target="_blank" rel="noopener noreferrer">www.aroha.co.kr</a></p>
   </footer>
 
@@ -815,6 +1005,137 @@
         }
       }
       applyKakaoLinks();
+
+      (function initHeaderAndNavSpy() {
+        var header = document.querySelector(".site-header");
+        var nav = document.querySelector(".nav-links");
+        if (!header || !nav) return;
+
+        var sectionIds = ["hero", "card", "intro", "company", "cta", "location"];
+        var links = nav.querySelectorAll("a[href^='#']");
+
+        function navOffsetPx() {
+          var probe = document.getElementById("card");
+          if (probe) {
+            var sm = parseFloat(getComputedStyle(probe).scrollMarginTop);
+            if (!isNaN(sm) && sm > 0) {
+              return Math.round(sm);
+            }
+          }
+          return Math.round(header.getBoundingClientRect().height);
+        }
+
+        function syncNavOffsetCss() {
+          var px = Math.round(header.getBoundingClientRect().height);
+          document.documentElement.style.setProperty("--nav-offset", px + "px");
+        }
+
+        var ticking = false;
+
+        /**
+         * 앵커 scroll-margin-top 과 동일한 기준: 뷰포트 상단에서 offset(px) 아래를 지나면 해당 섹션 활성.
+         * (브라우저가 #card 등으로 점프할 때 맞추는 위치와 같은 선)
+         */
+        function computeSpyId() {
+          var off = navOffsetPx();
+          var line = off + 1;
+          var spyActive = "hero";
+          for (var i = 0; i < sectionIds.length; i++) {
+            var sec = document.getElementById(sectionIds[i]);
+            if (!sec) continue;
+            if (sec.getBoundingClientRect().top <= line) {
+              spyActive = sectionIds[i];
+            }
+          }
+          return spyActive;
+        }
+
+        function applyNavState() {
+          var y = window.scrollY || document.documentElement.scrollTop || 0;
+          header.classList.toggle("is-scrolled", y > 2);
+          syncNavOffsetCss();
+
+          var showId = computeSpyId();
+
+          links.forEach(function (a) {
+            a.classList.remove("is-active");
+            a.removeAttribute("aria-current");
+          });
+          links.forEach(function (a) {
+            var href = a.getAttribute("href") || "";
+            if (href === "#" + showId) {
+              a.classList.add("is-active");
+              a.setAttribute("aria-current", "page");
+            }
+          });
+        }
+
+        function update() {
+          ticking = false;
+          var ae = document.activeElement;
+          if (ae && nav.contains(ae) && ae.closest && ae.closest(".nav-links")) {
+            try {
+              if (!ae.matches(":focus-visible")) {
+                ae.blur();
+              }
+            } catch (err) {
+              ae.blur();
+            }
+          }
+          applyNavState();
+        }
+
+        function onScrollOrResize() {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(update);
+          }
+        }
+
+        nav.addEventListener(
+          "click",
+          function (e) {
+            var a = e.target.closest("a[href^='#']");
+            if (!a || !nav.contains(a)) return;
+            var href = a.getAttribute("href");
+            if (!href || href.length < 2) return;
+            var id = href.slice(1);
+
+            syncNavOffsetCss();
+
+            if (id !== "hero") {
+              if (e.detail > 0) {
+                requestAnimationFrame(function () {
+                  a.blur();
+                });
+              }
+              return;
+            }
+
+            var el = document.getElementById("hero");
+            if (!el) return;
+            e.preventDefault();
+            var instant = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            window.scrollTo({ top: 0, behavior: instant ? "auto" : "smooth" });
+            if (window.history && window.history.pushState) {
+              window.history.pushState(null, "", href);
+            } else {
+              window.location.hash = href;
+            }
+            if (e.detail > 0) {
+              requestAnimationFrame(function () {
+                a.blur();
+              });
+            }
+            window.setTimeout(applyNavState, instant ? 0 : 450);
+          },
+          false
+        );
+
+        window.addEventListener("scroll", onScrollOrResize, { passive: true });
+        window.addEventListener("resize", onScrollOrResize, { passive: true });
+        applyNavState();
+      })();
 
       var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduceMotion) {
