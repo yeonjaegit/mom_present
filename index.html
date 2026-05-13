@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="아로하 노블 결혼정보 분당본점 노은옥 수석이사 — 성남·분당 전문 맞춤 상담" />
+  <title>노은옥 수석이사 | 아로하 노블 결혼정보 분당본점</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --gold: #c5a059;
+      --gold-soft: #e8d5a8;
+      --navy: #001f3f;
+      --navy-mid: #0a2d52;
+      --cream: #faf8f5;
+      --text: #1a1a1a;
+      --muted: #4a5568;
+      --white: #ffffff;
+      --shadow: 0 18px 50px rgba(0, 31, 63, 0.12);
+      --radius: 18px;
+      --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --font-serif: "Nanum Myeongjo", Georgia, serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: 1.125rem;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--navy-mid); }
+    a:hover { color: var(--gold); }
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip:focus {
+      left: 16px;
+      top: 16px;
+      width: auto;
+      height: auto;
+      padding: 12px 20px;
+      background: var(--navy);
+      color: var(--white);
+      z-index: 9999;
+      border-radius: 8px;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+    }
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .brand-en {
+      font-size: 0.85rem;
+      letter-spacing: 0.22em;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .brand-ko {
+      font-size: 0.8rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      justify-content: flex-end;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      padding: 6px 4px;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-links a:hover {
+      border-bottom-color: var(--gold);
+      color: var(--navy-mid);
+    }
+
+    /* Sections */
+    .section {
+      padding: clamp(56px, 8vw, 96px) 20px;
+    }
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 4vw, 2.35rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin: 0 0 20px;
+      line-height: 1.3;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 45%, #123a5c 100%);
+      color: var(--white);
+      padding: clamp(48px, 10vw, 100px) 20px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 80% 20%, rgba(197, 160, 89, 0.18), transparent 55%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: clamp(32px, 5vw, 64px);
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-photo-wrap { max-width: 280px; margin: 0 auto; }
+    }
+    .hero-photo-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      border: 3px solid rgba(197, 160, 89, 0.55);
+    }
+    .hero-photo-wrap img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(197, 160, 89, 0.2);
+      color: var(--gold-soft);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.1rem, 5.5vw, 3.25rem);
+      font-weight: 800;
+      margin: 0 0 16px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .hero .name-sub {
+      font-size: 1.05rem;
+      opacity: 0.92;
+      margin-bottom: 24px;
+    }
+    .hero-lead {
+      font-size: clamp(1.15rem, 2.4vw, 1.35rem);
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.92);
+      max-width: 34ch;
+    }
+    @media (max-width: 900px) {
+      .hero-lead { margin-left: auto; margin-right: auto; max-width: 100%; }
+    }
+
+    /* Digital business card */
+    .card-section { background: var(--white); }
+    .digital-card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      overflow: hidden;
+    }
+    .digital-card-top {
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      color: var(--white);
+      padding: 28px 28px 24px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    @media (max-width: 560px) {
+      .digital-card-top { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    }
+    .emblem {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 30%, var(--gold-soft), var(--gold));
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      font-size: 1.75rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+    .digital-brand .aroha {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.28em;
+      margin: 0 0 4px;
+      color: var(--gold-soft);
+    }
+    .digital-brand .noblesse {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      margin: 0 0 6px;
+    }
+    .digital-brand .company-ko {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin: 0;
+    }
+    .digital-badges {
+      margin-top: 14px;
+      font-size: 0.82rem;
+      line-height: 1.55;
+      opacity: 0.88;
+    }
+    .digital-card-body {
+      padding: 28px;
+    }
+    .role-block {
+      text-align: center;
+      padding-bottom: 22px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid rgba(0, 31, 63, 0.1);
+    }
+    .role-block .title {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+    .role-block .name {
+      font-family: var(--font-serif);
+      font-size: clamp(1.85rem, 4vw, 2.35rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin: 0;
+      letter-spacing: 0.08em;
+    }
+    .contact-rows {
+      display: grid;
+      gap: 14px;
+    }
+    .contact-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      font-size: 1.05rem;
+    }
+    .contact-row i {
+      color: var(--gold);
+      margin-top: 4px;
+      min-width: 22px;
+      text-align: center;
+    }
+    .contact-row a {
+      font-weight: 700;
+      text-decoration: none;
+      word-break: keep-all;
+    }
+    .contact-row a:hover { text-decoration: underline; }
+    .branch-note {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 4px;
+      display: block;
+    }
+
+    .card-photo-ref {
+      margin-top: 28px;
+      text-align: center;
+    }
+    .card-photo-ref p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+    .card-photo-ref img {
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 12px 32px rgba(0, 31, 63, 0.12);
+      max-height: 220px;
+      width: auto;
+      object-fit: contain;
+      background: #f0ebe3;
+    }
+
+    /* Intro & company */
+    .intro-section { background: linear-gradient(180deg, #f3efe8 0%, var(--cream) 100%); }
+    .quote-box {
+      border-left: 4px solid var(--gold);
+      padding: 20px 24px;
+      background: var(--white);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      box-shadow: 0 8px 28px rgba(0, 31, 63, 0.06);
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.2vw, 1.25rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.75;
+      margin: 24px 0 0;
+    }
+    .prose {
+      font-size: 1.12rem;
+      color: var(--text);
+      max-width: 68ch;
+    }
+    .prose p { margin: 0 0 1.1em; }
+    .prose p:last-child { margin-bottom: 0; }
+
+    .company-section { background: var(--white); }
+    .pill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .pill {
+      background: var(--cream);
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .pill i {
+      font-size: 1.5rem;
+      color: var(--gold);
+      margin-top: 2px;
+    }
+    .pill h3 {
+      margin: 0 0 6px;
+      font-size: 1.1rem;
+      color: var(--navy);
+    }
+    .pill p {
+      margin: 0;
+      font-size: 0.98rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, var(--navy) 0%, #0c3358 100%);
+      color: var(--white);
+      text-align: center;
+    }
+    .cta-section .section-title { color: var(--white); }
+    .cta-section .section-label { color: var(--gold-soft); }
+    .cta-lead {
+      font-size: 1.15rem;
+      opacity: 0.92;
+      max-width: 40ch;
+      margin: 0 auto 28px;
+    }
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-size: 1.08rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), #b8924f);
+      color: var(--navy);
+      box-shadow: 0 10px 30px rgba(197, 160, 89, 0.35);
+    }
+    .btn-gold:hover {
+      box-shadow: 0 14px 36px rgba(197, 160, 89, 0.45);
+      color: var(--navy);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.55);
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+    }
+    .btn-kakao {
+      background: #fee500;
+      color: #191919;
+    }
+    .btn-kakao:hover { color: #191919; }
+
+    /* Location */
+    .location-section { background: var(--cream); }
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 8px;
+    }
+    @media (max-width: 860px) {
+      .location-grid { grid-template-columns: 1fr; }
+    }
+    .map-frame {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0, 31, 63, 0.12);
+      min-height: 320px;
+      background: #e2e8f0;
+    }
+    .map-frame iframe {
+      width: 100%;
+      height: 360px;
+      border: 0;
+    }
+    .address-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(197, 160, 89, 0.25);
+    }
+    .address-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .address-card h3 i { color: var(--gold); }
+    .address-card p {
+      margin: 0 0 14px;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+    .address-card .sub {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.75);
+      padding: 28px 20px;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+    .site-footer a { color: var(--gold-soft); }
+
+    /* Mobile bottom bar */
+    .mobile-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(197, 160, 89, 0.35);
+      gap: 10px;
+      justify-content: center;
+    }
+    @media (max-width: 720px) {
+      .mobile-cta-bar { display: flex; }
+      body { padding-bottom: 76px; }
+    }
+    .mobile-cta-bar .btn {
+      flex: 1;
+      padding: 14px 12px;
+      font-size: 0.98rem;
+      min-width: 0;
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-en">AROHA</span>
+        <span class="brand-ko">아로하 노블 결혼정보 · 분당본점</span>
+      </div>
+      <nav class="nav-links" aria-label="주요 메뉴">
+        <a href="#hero">홈</a>
+        <a href="#card">디지털 명함</a>
+        <a href="#intro">소개</a>
+        <a href="#company">회사</a>
+        <a href="#location">오시는 길</a>
+        <a href="#cta">상담</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="hero">
+      <div class="hero-grid">
+        <div class="hero-photo-wrap reveal visible">
+          <img
+            src="image.png"
+            alt="노은옥 수석이사 프로필 사진 자리 — 실제 사진으로 교체해 주세요"
+            width="560"
+            height="700"
+            loading="eager"
+          />
+        </div>
+        <div>
+          <div class="hero-badge reveal visible reveal-delay-1"><i class="fa-solid fa-ring" aria-hidden="true"></i> 아로하 노블 결혼정보</div>
+          <h1 class="reveal visible reveal-delay-1">노은옥</h1>
+          <p class="name-sub reveal visible reveal-delay-2">노블전문 / 수석이사 · 분당본점</p>
+          <p class="hero-lead reveal visible reveal-delay-2">
+            인생의 가장 소중한 인연,<br />
+            진심을 다해 찾아드립니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section card-section" id="card" aria-labelledby="card-heading">
+      <div class="section-inner">
+        <p class="section-label reveal"><i class="fa-solid fa-id-card" aria-hidden="true"></i> Digital Card</p>
+        <h2 class="section-title reveal" id="card-heading">디지털 명함</h2>
+        <div class="digital-card reveal reveal-delay-1">
+          <div class="digital-card-top">
+            <div class="emblem" aria-hidden="true"><i class="fa-solid fa-crown"></i></div>
+            <div class="digital-brand">
+              <p class="aroha">AROHA</p>
+              <p class="noblesse">Noblesse</p>
+              <p class="company-ko">아로하노블결혼정보</p>
+              <div class="digital-badges">
+                연구개발전담부서 · 벤처기업확정 · AI특허매칭출원
+              </div>
+            </div>
+          </div>
+          <div class="digital-card-body">
+            <div class="role-block">
+              <p class="title">노블전문 / 수석이사</p>
+              <p class="name">노 은 옥</p>
+            </div>
+            <div class="contact-rows">
+              <div class="contact-row">
+                <i class="fa-solid fa-building" aria-hidden="true"></i>
+                <div>
+                  <strong>압구정 VIP 지점</strong>
+                  <span class="branch-note">서울 강남구 논현로 176길 14 (압구정증권빌딩 6층)</span>
+                </div>
+              </div>
+              <div class="contact-row">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <div>
+                  <strong>분당 본사</strong>
+                  <span class="branch-note">경기 성남시 분당구 황새울로 200번길 34 (코포모타워 3층)</span>
+                </div>
+              </div>
+              <div class="contact-row">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <div>
+                  <strong>대표번호</strong><br />
+                  <a href="tel:1566-6780">1566-6780</a>
+                </div>
+              </div>
+              <div class="contact-row">
+                <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+                <div>
+                  <strong>핸드폰</strong><br />
+                  <a href="tel:010-7917-8798">010-7917-8798</a>
+                </div>
+              </div>
+              <div class="contact-row">
+                <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+                <div>
+                  <strong>직통</strong><br />
+                  <a href="tel:031-711-0661">031-711-0661</a>
+                </div>
+              </div>
+              <div class="contact-row">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <div>
+                  <strong>이메일</strong><br />
+                  <a href="mailto:aroha@aroha.co.kr">aroha@aroha.co.kr</a>
+                </div>
+              </div>
+              <div class="contact-row">
+                <i class="fa-solid fa-fax" aria-hidden="true"></i>
+                <div>
+                  <strong>팩스</strong><br />
+                  <span>02-2178-9392</span>
+                </div>
+              </div>
+              <div class="contact-row">
+                <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                <div>
+                  <strong>홈페이지</strong><br />
+                  <a href="https://www.aroha.co.kr" target="_blank" rel="noopener noreferrer">https://www.aroha.co.kr</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-photo-ref reveal reveal-delay-2">
+          <img src="img/business-card.png" alt="아로하 노블 결혼정보 노은옥 수석이사 명함" loading="lazy" width="640" height="200" onerror="this.style.display='none'; this.previousElementSibling.textContent='명함 이미지: 저장소의 img/business-card.png 파일을 넣어 주시면 여기에 표시됩니다.';" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section intro-section" id="intro" aria-labelledby="intro-heading">
+      <div class="section-inner">
+        <p class="section-label reveal"><i class="fa-solid fa-heart" aria-hidden="true"></i> Introduction</p>
+        <h2 class="section-title reveal" id="intro-heading">노은옥 수석이사</h2>
+        <div class="prose reveal reveal-delay-1">
+          <p>
+            성남시 분당 지역을 오랫동안 지켜온 인연 전문가로서, 회원 한 분 한 분의 삶의 이야기에 귀 기울입니다.
+            지역 특성과 라이프스타일을 세심하게 반영한 상담으로, 서로의 가치관과 미래 설계가 맞닿는 만남을 준비합니다.
+          </p>
+          <p>
+            아로하의 책임 있는 매칭 시스템과 검증 절차를 바탕으로, 가벼운 소개가 아닌 신뢰할 수 있는 동행의 시작을 함께 만들어 갑니다.
+          </p>
+        </div>
+        <blockquote class="quote-box reveal reveal-delay-2">
+          “결혼은 단순한 만남이 아닌 삶의 결합입니다. 꼼꼼한 검증과 진심 어린 상담으로 끝까지 책임지겠습니다.”
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section company-section" id="company" aria-labelledby="company-heading">
+      <div class="section-inner">
+        <p class="section-label reveal"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Company</p>
+        <h2 class="section-title reveal" id="company-heading">아로하 결혼정보</h2>
+        <p class="prose reveal reveal-delay-1">
+          <a href="https://www.aroha.co.kr" target="_blank" rel="noopener noreferrer">아로하 결혼정보</a>는 단순 소개를 넘어,
+          데이터와 프로세스로 신뢰를 쌓는 프리미엄 매칭 서비스를 지향합니다. 분당본점에서도 동일한 품질 기준으로 맞춤 상담을 제공합니다.
+        </p>
+        <div class="pill-grid">
+          <div class="pill reveal reveal-delay-1">
+            <i class="fa-solid fa-flask" aria-hidden="true"></i>
+            <div>
+              <h3>연구개발전담부서</h3>
+              <p>매칭 품질과 회원 경험을 지속적으로 개선하기 위한 전담 R&amp;D 조직을 운영합니다.</p>
+            </div>
+          </div>
+          <div class="pill reveal reveal-delay-2">
+            <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+            <div>
+              <h3>벤처기업확정</h3>
+              <p>기술 기반 서비스로서의 성장성과 혁신성을 공식적으로 인정받은 기업입니다.</p>
+            </div>
+          </div>
+          <div class="pill reveal reveal-delay-3">
+            <i class="fa-solid fa-brain" aria-hidden="true"></i>
+            <div>
+              <h3>AI 특허 매칭 출원</h3>
+              <p>인공지능을 활용한 매칭 관련 특허 출원으로, 과학적 근거에 기반한 인연 설계를 추구합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section" id="cta" aria-labelledby="cta-heading">
+      <div class="section-inner">
+        <p class="section-label reveal"><i class="fa-solid fa-comments" aria-hidden="true"></i> Consultation</p>
+        <h2 class="section-title reveal" id="cta-heading">상담 신청하기</h2>
+        <p class="cta-lead reveal reveal-delay-1">편하신 방법으로 연락 주시면, 분당본점 기준으로 빠르게 안내드리겠습니다.</p>
+        <div class="cta-buttons reveal reveal-delay-2">
+          <a class="btn btn-gold" href="tel:1566-6780"><i class="fa-solid fa-phone" aria-hidden="true"></i> 대표번호 연결</a>
+          <a class="btn btn-outline" href="tel:010-7917-8798"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> 휴대전화 연결</a>
+          <a class="btn btn-kakao" id="kakaoCta" href="#" rel="noopener noreferrer"><i class="fa-regular fa-comment-dots" aria-hidden="true"></i> 톡 상담카카오</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section location-section" id="location" aria-labelledby="location-heading">
+      <div class="section-inner">
+        <p class="section-label reveal"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Location</p>
+        <h2 class="section-title reveal" id="location-heading">분당본점 오시는 길</h2>
+        <div class="location-grid">
+          <div class="address-card reveal">
+            <h3><i class="fa-solid fa-building" aria-hidden="true"></i> 코포모타워 3층</h3>
+            <p>경기 성남시 분당구 황새울로 200번길 34 (코포모타워 3층)</p>
+            <p class="sub">대표번호 1566-6780 · 방문 전 예약 상담을 권장드립니다.</p>
+            <p class="sub"><i class="fa-solid fa-train-subway" style="color: var(--gold);" aria-hidden="true"></i> 판교·정자·미금 등 분당권 대중교통 이용 시 안내 가능</p>
+          </div>
+          <div class="map-frame reveal reveal-delay-1">
+            <iframe
+              title="분당본점 위치 — 코포모타워"
+              src="https://maps.google.com/maps?q=%EA%B2%BD%EA%B8%B0+%EC%84%B1%EB%82%A8%EC%8B%9C+%EB%B6%84%EB%8B%B9%EA%B5%AC+%ED%99%A9%EC%83%88%EC%9A%B8%EB%A1%9C200%EB%B2%88%EA%B8%B8+34+%EC%BD%94%ED%8F%AC%EB%AA%A8%ED%83%80%EC%9B%8C&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 아로하 노블 결혼정보 · 노은옥 수석이사 분당본점 랜딩 페이지</p>
+    <p><a href="https://www.aroha.co.kr" target="_blank" rel="noopener noreferrer">www.aroha.co.kr</a></p>
+  </footer>
+
+  <div class="mobile-cta-bar" role="navigation" aria-label="빠른 상담">
+    <a class="btn btn-gold" href="tel:1566-6780"><i class="fa-solid fa-phone" aria-hidden="true"></i> 전화</a>
+    <a class="btn btn-kakao" id="kakaoCtaMobile" href="#"><i class="fa-brands fa-kakao-talk" aria-hidden="true"></i> 카톡</a>
+  </div>
+
+  <script>
+    /** 실제 카카오톡 채널 또는 오픈채팅 URL로 변경하세요. */
+    var KAKAO_CONSULT_URL = "https://www.aroha.co.kr";
+
+    (function () {
+      function applyKakaoLinks() {
+        var k1 = document.getElementById("kakaoCta");
+        var k2 = document.getElementById("kakaoCtaMobile");
+        if (k1) {
+          k1.href = KAKAO_CONSULT_URL;
+          k1.target = "_blank";
+          k1.rel = "noopener noreferrer";
+        }
+        if (k2) {
+          k2.href = KAKAO_CONSULT_URL;
+          k2.target = "_blank";
+          k2.rel = "noopener noreferrer";
+        }
+      }
+      applyKakaoLinks();
+
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion) {
+        document.querySelectorAll(".reveal").forEach(function (el) {
+          el.classList.add("visible");
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { root: null, rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+      );
+
+      document.querySelectorAll(".reveal").forEach(function (el) {
+        if (el.closest(".hero")) return;
+        observer.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>
